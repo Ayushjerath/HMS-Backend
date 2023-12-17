@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
-// Schema
-const reportSchema = new mongoose.Schema({
-    reportId : {
+
+const commentSchema = new mongoose.Schema({
+    commentId : {
         type : String,
         required : true,
         unique : true,
@@ -12,17 +12,18 @@ const reportSchema = new mongoose.Schema({
         required : true,
         unqiue : true,
     },
-    doctorId : {
+    postId : {
         type : String,
         required : true,
         unqiue : true,
     },
-    descp : {
+    commentText : {
         type : String,
+        required : true,
     },
 },{timestamps : true});
 
 // Model 
-const report = mongoose.model('report',reportSchema);
+const Comment = mongoose.model('Comment',commentSchema);
 
-module.exports = report;
+module.exports = Comment;

@@ -1,28 +1,32 @@
 const mongoose = require('mongoose');
 
 // Schema
-const surveyQuestionSchema = new mongoose.Schema({
+const survey_questionSchema = new mongoose.Schema({
     questionId : {
         type : String,
         required : true,
         unique : true,
+    },
+    questionType : {
+        type : String,
+        required : true,
+    },
+    questionTest : {
+        type : String,
+        required : true,
+    },
+    questionOptions : {
+        type : String,
+        required : true,
     },
     surveyId : {
         type : String,
         required : true,
         unique : true,
     },
-    type : {
-        type : String,
-        required : true,
-    },
-    question : {
-        type : String,
-        required : true,
-    }
 },{timestamps : true});
 
 // Model 
-const surveyQuestion = mongoose.model('surveyQuestion',surveyQuestionSchema);
+const Survey_Question = mongoose.model('Survey_Question',survey_questionSchema);
 
-module.exports = surveyQuestion;
+module.exports = Survey_Question;

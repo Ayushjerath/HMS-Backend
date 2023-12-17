@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-// Schema
 const activitySchema = new mongoose.Schema({
     ActivityId : {
         type : String,
@@ -12,13 +11,28 @@ const activitySchema = new mongoose.Schema({
         required : true,
         unique : true,
     },
-    type : {
+    activityType : {
+        type : String,
+        required : true,
+    },
+    activityDate : {
+        type : Date,
+        required : true,
+    },
+    activityTitle : {
+        type : String,
+        required : true,
+    },
+    activityData : {
+        type : String,
+        required : true,
+    },
+    groupId : {
         type : String,
         required : true,
     },
 },{timestamps : true});
 
-// Model 
-const Activity = mongoose.model('activity',activitySchema);
+const Activity = mongoose.model('Activity',activitySchema);
 
 module.exports = Activity;

@@ -1,0 +1,48 @@
+*** Model ***
+
+User: UserId(P), name, email, DOB (# todo : find age), gender, profile pic, password(# todo : hashing), role (user/admin), status, phone
+
+Activities: ActivityId(P), UserId(Fk), type(not null), CreatedAt(not null), UpdatedAt(not null)
+
+AppNotification: NotificationId(P), UserId(Fk), msg(not null)
+
+Doctors: DoctorId(P), UserId(Fk), profile
+
+Survey: SurveyId(P), title, descp, CreatedAt, CreatedBy(Fk to User table) # todo
+
+SurveyQuestion: QuestionId(P), SurveyId(Fk), type(options), question
+
+SurveyResponse: ResponseId(P), QuestionId(Fk), UserId(Fk), response, SurveyId(Fk)
+
+Posts: PostId(P), UserId(Fk), descp, CreatedAt
+
+Report: ReportId(P), UserId(Fk), DoctorId(Fk), Descp, CreatedAt, UpdatedAt
+
+Reactions: ReactionId(P), PostId(Fk), UserId(Fk), type
+
+
+
+
+**************************************
+
+
+*** Relations ***
+Survey -----> SurveyQuestion -------> SurveyResponse (main table User)
+
+Reactions -----> User ( many to many)
+
+Posts ------> User (1 user many post)
+
+Posts -------> Reaction (main table User)  (1 post many reactions)
+
+Activities -------> User (1 user many activities)
+
+AppNotification -------> User (1 user many notifications)
+
+Doctor --------> User (many to many)
+
+User --------> Report -------> Doctor (1 to 1 to 1)
+
+Doctor --------> Report (1 to many)
+
+User --------> Report (1 to many)

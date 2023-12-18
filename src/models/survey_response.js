@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // Schema
-const surveyResponseSchema = new mongoose.Schema({
+const survey_responseSchema = new mongoose.Schema({
     responseId : {
         type : String,
         required : true,
@@ -17,7 +17,11 @@ const surveyResponseSchema = new mongoose.Schema({
         required : true,
         unqiue : true,
     },
-    response : {
+    responseText : {
+        type : String,
+        required : true,
+    },
+    responseOption : {
         type : String,
         required : true,
     },
@@ -29,6 +33,6 @@ const surveyResponseSchema = new mongoose.Schema({
 },{timestamps : true});
 
 // Model 
-const surveyResponse = mongoose.model('surveyResponse',surveyResponseSchema);
+const Survey_Response = mongoose.model('Survey_Response',survey_responseSchema);
 
-module.exports = surveyResponse;
+module.exports = Survey_Response;

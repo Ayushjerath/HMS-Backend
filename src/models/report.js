@@ -18,7 +18,7 @@ const reportSchema = new mongoose.Schema({
         unqiue : true,
     },
     reportData : {
-        type : String,
+        type : JSON,
     },
 },{timestamps : true});
 

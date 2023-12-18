@@ -6,15 +6,11 @@ const user_groupSchema = new mongoose.Schema({
         required : true,
         unique : true,
     },
-    users: [{
-        type: String, 
-        ref: 'User', // Referencing from the User model
-    }],
-    // userId : {
-    //     type : String,
-    //     required : true,
-    //     unique : true,
-    // },
+    userId : {
+        type : String,
+        required : true,
+        unique : true,
+    },
     groupName : {
         type : String,
         required : true,

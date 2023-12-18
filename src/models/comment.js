@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
-// Schema
-const reactionSchema = new mongoose.Schema({
-    reactionId : {
+
+const commentSchema = new mongoose.Schema({
+    commentId : {
         type : String,
         required : true,
         unique : true,
@@ -17,13 +17,13 @@ const reactionSchema = new mongoose.Schema({
         required : true,
         unqiue : true,
     },
-    type : {
+    commentText : {
         type : String,
         required : true,
     },
 },{timestamps : true});
 
 // Model 
-const reaction = mongoose.model('report',reactionSchema);
+const Comment = mongoose.model('Comment',commentSchema);
 
-module.exports = reaction;
+module.exports = Comment;

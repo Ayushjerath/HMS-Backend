@@ -1,24 +1,28 @@
 const mongoose = require('mongoose');
 
 // Schema
-const appNotificationSchema = new mongoose.Schema({
-    NotificationId : {
+const reportSchema = new mongoose.Schema({
+    reportId : {
         type : String,
         required : true,
         unique : true,
     },
-    UserId : {
+    userId : {
         type : String,
         required : true,
-        unique : true,
+        unqiue : true,
     },
-    msg : {
+    docId : {
         type : String,
         required : true,
+        unqiue : true,
+    },
+    reportData : {
+        type : JSON,
     },
 },{timestamps : true});
 
 // Model 
-const AppNotification = mongoose.model('app_notification',appNotificationSchema);
+const Report = mongoose.model('Report',reportSchema);
 
-module.exports = AppNotification;
+module.exports = Report;

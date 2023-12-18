@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
 
-// Schema
-const reportSchema = new mongoose.Schema({
-    reportId : {
+const user_groupSchema = new mongoose.Schema({
+    groupId : {
         type : String,
         required : true,
         unique : true,
@@ -10,19 +9,18 @@ const reportSchema = new mongoose.Schema({
     userId : {
         type : String,
         required : true,
-        unqiue : true,
+        unique : true,
     },
-    doctorId : {
+    groupName : {
         type : String,
         required : true,
-        unqiue : true,
     },
-    descp : {
+    groupDescription : {
         type : String,
+        required : true,
     },
 },{timestamps : true});
 
-// Model 
-const report = mongoose.model('report',reportSchema);
+const User_Group = mongoose.model('User_Group',user_groupSchema);
 
-module.exports = report;
+module.exports = User_Group;

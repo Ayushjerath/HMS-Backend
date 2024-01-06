@@ -5,8 +5,8 @@ const development = {
   options: {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
+    // useCreateIndex: true,
+    // useFindAndModify: false,
   },
 };
 
@@ -35,7 +35,7 @@ const environment = process.env.NODE_ENV || 'development';
 const db = {
   development,
   production,
-  testing,
+  test,
 };
 
 module.exports = db[environment];
